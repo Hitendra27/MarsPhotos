@@ -1,10 +1,10 @@
-package com.example.marsphotos.fake
+package com.example.marsphotos.rules
 
-import com.example.marsphotos.rules.TestDispatcherRule
+import com.example.marsphotos.fake.FakeDataSource
+import com.example.marsphotos.fake.FakeNetworkMarsPhotosRepository
 import com.example.marsphotos.ui.screens.MarsUiState
 import com.example.marsphotos.ui.screens.MarsViewModel
 import junit.framework.TestCase.assertEquals
-import kotlinx.coroutines.test.TestDispatcher
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
@@ -20,8 +20,7 @@ class MarsViewModelTest {
             marsPhotosRespository = FakeNetworkMarsPhotosRepository()
         )
             assertEquals(
-                MarsUiState.Success("Success: ${FakeDataSource.photosList.size} Mars " +
-                        "photos retrieved"),
+                MarsUiState.Success(FakeDataSource.photosList),
                 marsViewModel.marsUiState
             )
     }
