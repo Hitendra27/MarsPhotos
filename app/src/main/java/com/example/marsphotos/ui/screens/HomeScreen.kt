@@ -51,11 +51,15 @@ import com.example.marsphotos.ui.theme.MarsPhotosTheme
 fun HomeScreen(
     marsUiState: MarsUiState,
     retryAction: () -> Unit,
+    contentPadding: PaddingValues = PaddingValues(0.dp),
     modifier: Modifier = Modifier,
 ) {
    when (marsUiState) {
        is MarsUiState.Loading -> LoadingScreen(modifier = modifier.fillMaxSize())
-       is MarsUiState.Success -> PhotosGridScreen(marsUiState.photos, modifier)
+       is MarsUiState.Success -> PhotosGridScreen(
+           marsUiState.photos,
+           contentPadding = contentPadding,
+           modifier = modifier.fillMaxSize())
        is MarsUiState.Error -> ErrorScreen(retryAction, modifier = modifier.fillMaxSize())
 
    }

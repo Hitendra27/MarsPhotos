@@ -36,6 +36,7 @@ import com.example.marsphotos.R
 import com.example.marsphotos.ui.screens.HomeScreen
 import com.example.marsphotos.ui.screens.MarsViewModel
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MarsPhotosApp() {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
@@ -49,7 +50,8 @@ fun MarsPhotosApp() {
             val marsViewModel: MarsViewModel = viewModel(factory = MarsViewModel.Factory)
             HomeScreen(
                 marsUiState = marsViewModel.marsUiState,
-                retryAction = marsViewModel::getMarsPhotos
+                retryAction = marsViewModel::getMarsPhotos,
+                contentPadding = it
             )
         }
     }
