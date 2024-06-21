@@ -26,6 +26,10 @@ Mars Photos is an Android app that displays actual images of Mars' surface. Thes
 - **Dependency Injection**: For managing dependencies.
 - **JUnit**: For unit testing ViewModel and Repository.
 
+## Screenshot of the Mars Photo App.
+<img width="389" alt="Screenshot 2024-06-21 at 14 15 45" src="https://github.com/Hitendra27/MarsPhotos/assets/73651340/ac83f4fd-6646-4bc6-9474-72fc8bdc7e1f">
+<img width="398" alt="Screenshot 2024-06-21 at 14 15 57" src="https://github.com/Hitendra27/MarsPhotos/assets/73651340/cf181774-76bf-460f-9dc8-1da2f30b0a0d">
+
 ## Getting Started
 To get a local copy up and running follow these simple steps.
 
